@@ -5,15 +5,10 @@ const http = require('http');
 const server = http.createServer(app);
 const socketio = require('socket.io');
 const fomateMessages = require('./utils/messages');
-
 const { userJoin, getUser, userLeave, getRoomUsers } = require('./utils/users');
-const { get } = require('https');
-
-
 const io = socketio(server);
-
 const botName = 'chatBot';
-const PORT = 3000 || process.env.PORT;
+const PORT =  process.env.PORT || 3000;
 
 // setting the index.html as entry point
 app.use(express.static(path.join(__dirname, 'public')));
